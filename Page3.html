@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine Question</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="pink-bg center">
+
+  <h1 class="lux">Will you be my Valentine?</h1>
+  <p class="thai">พี่ช่วยมาเป็นคนพิเศษในวันวาเลนไทน์ให้ผมได้มั้ยย</p>
+
+  <div class="choice">
+    <a href="page4.html" class="btn yes">Yes 💖</a>
+    <button class="btn no" onclick="nope()">No 💔</button>
+  </div>
+
+  <p id="plead" class="hidden">ไม่เอาาาา มาเป็นให้หมาเด็กเถอะนะ 🐶</p>
+
+<script>
+function nope() {
+  document.querySelector('.no').style.display = 'none';
+  document.querySelector('.choice').style.justifyContent = 'center';
+  document.getElementById('plead').classList.remove('hidden');
+}
+</script>
+
+</body>
+</html>

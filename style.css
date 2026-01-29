@@ -1,0 +1,252 @@
+/* ===== RESET พื้นฐาน ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  text-align: center;
+  font-family: 'Kodchasan', sans-serif;
+}
+
+/* ===== พื้นหลังชมพู ===== */
+.pink-bg {
+  background: linear-gradient(#ffd6e8, #fff);
+  min-height: 100vh;
+}
+
+/* ===== จัดกลางจอ ===== */
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== หน้าแรก ===== */
+.title-big {
+  font-size: clamp(28px, 6vw, 56px);
+  color: #e6005c;
+  margin: 20px;
+}
+
+.dog-main {
+  width: 65%;
+  max-width: 320px;
+}
+
+/* หัวใจมุมขวาบน */
+.heart-top {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 80px;
+}
+
+/* ===== ปุ่ม ===== */
+.btn {
+  margin-top: 30px;
+  padding: 14px 36px;
+  background: #ff4d88;
+  color: #fff;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ===== หน้า 2 : โน้ตแนวตั้ง ===== */
+.note-vertical {
+  background: #fffdf7;
+  width: 75%;
+  max-width: 420px;
+  min-height: 70vh;
+  padding: 40px 30px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  font-family: 'Itim', cursive;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* ข้อความในโน้ต */
+.note-vertical p {
+  font-size: 20px;
+  line-height: 2;
+  margin: 18px 0;
+  text-align: left;
+}
+
+/* บรรทัดสุดท้าย */
+.note-vertical .end {
+  margin-top: 30px;
+  font-size: 22px;
+  color: #e6005c;
+  font-weight: bold;
+}
+
+/* ===== เอฟเฟกต์เขียนทีละบรรทัด ===== */
+.line {
+  opacity: 0;
+  animation: writeLine 0.9s forwards;
+}
+
+@keyframes writeLine {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== รูป Mya.gif ใต้โน้ต ===== */
+.note-dog {
+  width: 130px;
+  margin: 35px auto 0;
+  display: block;
+
+  opacity: 0;
+  animation: writeLine 1s forwards;
+}
+
+/* ===== หน้า 3 : Will you be my Valentine ===== */
+.lux {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 6vw, 60px);
+  color: #b30047;
+  margin-bottom: 10px;
+}
+
+.thai {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+/* ปุ่ม Yes / No */
+.choice {
+  display: flex;
+  gap: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ข้อความหลังจากกด No */
+#plead {
+  margin-top: 30px;
+  font-size: 22px;
+  color: #cc0044;
+}
+
+/* ===== หน้า 4 ===== */
+.dog-bottom {
+  width: 220px;
+  margin-top: 40px;
+}
+
+/* ===== มือถือ ===== */
+@media (max-width: 480px) {
+  .note-vertical {
+    width: 88%;
+    padding: 30px 22px;
+  }
+
+  .note-vertical p {
+    font-size: 18px;
+  }
+
+  .btn {
+    font-size: 18px;
+    padding: 12px 28px;
+  }
+}
+/* ===== หน้าสุดท้าย : ข้อความเสริม ===== */
+.final-sub {
+  font-size: 20px;
+  color: #cc0044;
+  margin-top: 10px;
+}
+
+.final-end {
+  margin-top: 30px;
+  font-size: 18px;
+  color: #b30047;
+  opacity: 0.9;
+  text-align: center;
+}
+
+/* รูป Doggy.png โผล่แบบดีใจ */
+.dog-bottom {
+  width: 220px;
+  margin-top: 30px;
+  animation: popUp 1s ease forwards;
+}
+
+@keyframes popUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===== DOG & CAT ตกแต่งด้านล่าง ===== */
+.final-pets {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 25px;
+  pointer-events: none;
+}
+
+.pet {
+  width: 90px;
+  opacity: 0;
+  animation: petPop 1s ease forwards;
+}
+
+.pet.dog {
+  animation-delay: 0.5s;
+}
+
+.pet.cat {
+  animation-delay: 1s;
+}
+
+@keyframes petPop {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* มือถือ */
+@media (max-width: 480px) {
+  .pet {
+    width: 70px;
+  }
+}
+
